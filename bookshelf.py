@@ -1,18 +1,19 @@
 import pytest
+
 class Book:
     def __init__(self, title, author, pages, price, quantity, sales):
-        self.title = title
-        self.author = author
-        self.pages = pages
-        self.price = price
-        self.quantity = quantity
-        self.sales = sales
+        self._title = title
+        self._author = author
+        self._pages = pages
+        self._price = price
+        self._quantity = quantity
+        self._sales = sales
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"{self._title} by {self._author}"
 
     def __repr__(self):
-        return f"Book({self.title}, {self.author}, {self.price}, {self.pages}, {self.quantity}, {self.sales})"
+        return f"Book({self._title}, {self._author}, {self._price}, {self._pages}, {self._quantity}, {self._sales})"
 
 
 class BookShop:
@@ -25,10 +26,10 @@ class BookShop:
     def del_book(self, book):
         self.books.remove(book)
 
-    def top_books_by_price(self, n):
+    def get_top_books_by_price(self, n):
         sorted_books = sorted(self.books, key=lambda x: x.price, reverse=True)
         return sorted_books[:n]
 
-    def top_books_by_sales(self, n):
+    def get_top_books_by_sales(self, n):
         sorted_books = sorted(self.books, key=lambda x: x.sales, reverse=True)
         return sorted_books[:n]
