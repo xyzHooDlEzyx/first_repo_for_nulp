@@ -1,5 +1,3 @@
-import pytest
-
 class Book:
     def __init__(self, title, author, pages, price, quantity, sales):
         self._title = title
