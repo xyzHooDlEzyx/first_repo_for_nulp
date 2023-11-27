@@ -1,5 +1,4 @@
-from bookshelf import Book
-from bookshelf import BookShop
+from bookshelf import Book, BookShop
 
 
 def main():
@@ -12,8 +11,8 @@ def main():
     bookshop.add_book(harry_potter)
     bookshop.add_book(jojo_bizarre_adventures)
 
-    get_top_price_books = bookshop.get_top_books_by_price(2)
-    get_top_sales_books = bookshop.get_top_books_by_sales(2)
+    top_price_books = bookshop.get_top_books_by_price(2)
+    top_sales_books = bookshop.get_top_books_by_sales(2)
 
     print("\nTop books by price:")
     for book in top_price_books:
@@ -22,7 +21,7 @@ def main():
     for book in top_sales_books:
         print(book)
 
-    bookshop.del_book(book1)
+    bookshop.del_book(song_of_ice_and_fire)
 
 
 if __name__ == '__main__':
